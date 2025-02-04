@@ -3,54 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InnovaDev Home</title>
+    <title>InnovaDev | Build the Future</title>
     <style>
+        /* Brand Colors */
+        :root {
+            --blue: #00bcd4;
+            --cyan: #3f51b5;
+            --black: #0a0a0a;
+            --purple: #9c27b0;
+            --pink: #e91e63;
+        }
+
+        /* Clean Modern Design */
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        h1 {
-            color: #0056b3;
-        }
-        a {
-            color: #0056b3;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            text-align: center;
-            margin-top: 50px;
-        }
-        .button {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px 20px;
-            background-color: #0056b3;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background: var(--black);
             color: white;
-            text-align: center;
-            text-decoration: none;
-            font-size: 16px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            line-height: 1.6;
         }
-        .button:hover {
-            background-color: #00448c;
+
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Animated Header */
+        header {
+            text-align: center;
+            padding: 6rem 2rem;
+            background: linear-gradient(45deg, var(--blue), var(--purple));
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,188,212,0.3);
+        }
+
+        /* Hiring Process */
+        .hiring-steps {
+            display: grid;
+            gap: 1.5rem;
+            counter-reset: step;
+        }
+
+        .step {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+        }
+
+        .step::before {
+            counter-increment: step;
+            content: counter(step);
+            background: var(--pink);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            position: absolute;
+            left: -15px;
+            top: 20px;
+        }
+
+        /* Discord CTA */
+        .discord-cta {
+            text-align: center;
+            background: linear-gradient(45deg, var(--cyan), var(--blue));
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 4rem 0;
+        }
+
+        /* Roles Section */
+        .roles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .role-card {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .role-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .role-card h3 {
+            color: var(--pink);
+            margin-top: 0;
+        }
+
+        /* Payment Section */
+        .payment-section {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+
+        .payment-section h2 {
+            color: var(--pink);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>Welcome to InnovaDev</h1>
-    <p>Choose a section to explore:</p>
-    <a href="wiki.html" class="button">Wiki</a>
-    <a href="community.html" class="button">Community</a>
-</div>
+    <header>
+        <h1>InnovaDev</h1>
+        <p>Where Innovation Meets Excellence</p>
+    </header>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="about-grid">
+            <div>
+                <h2>Who We Are</h2>
+                <p>At InnovaDev, we blend creativity with technology to build groundbreaking solutions. Our Games Hub division specializes in creating immersive gaming experiences that push boundaries.</p>
+                
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>🎮 Discord: <a href="https://discord.gg/qz9DABssg9" style="color: var(--pink);">https://discord.gg/qz9DABssg9</a></li>
+                    <li>👤 Contact Our Staff: 
+                        <ul>
+                            <li><a href="https://discord.com/users/@developer02560" style="color: var(--pink);">Developer02560</a></li>
+                            <li><a href="https://discord.com/users/@atom20003113" style="color: var(--pink);">Atom20003113</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?auto=format&fit=crop&w=800" 
+                 alt="Development Team" 
+                 class="about-image">
+        </div>
+    </section>
+
+    <!-- Available Roles Section -->
+    <section class="section" id="roles">
+        <h2>Available Roles</h2>
+        <div class="roles-grid">
+            <div class="role-card">
+                <h3>Programmers</h3>
+                <p>We need programmers of all types: front-end, back-end, full-stack, game developers, and more. If you can code, we want you!</p>
+            </div>
+            <div class="role-card">
+                <h3>Designers</h3>
+                <p>UI/UX designers, graphic artists, and game designers are welcome to join our team and bring creative visions to life.</p>
+            </div>
+            <div class="role-card">
+                <h3>Community Managers</h3>
+                <p>Help us build and manage our community, engage with users, and create a welcoming environment for everyone.</p>
+            </div>
+            <div class="role-card">
+                <h3>QA Testers</h3>
+                <p>Ensure our products are bug-free and deliver the best user experience by joining our quality assurance team.</p>
+            </div>
+            <div class="role-card">
+                <h3>Project Managers</h3>
+                <p>Organize and oversee projects to ensure they are delivered on time and meet our high standards.</p>
+            </div>
+            <div class="role-card">
+                <h3>Marketing Specialists</h3>
+                <p>Help us grow our brand and reach new audiences through creative marketing strategies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Pay Section -->
+    <section class="section" id="payment">
+        <div class="payment-section">
+            <h2>How We Recognize and Reward Contributions</h2>
+            <p>At InnovaDev, we believe in supporting our team members in unique ways. While we don’t offer monetary compensation, we provide:</p>
+            <ul>
+                <li>🚀 <strong>Promotion for Your Products/Sites:</strong> We’ll help promote your personal projects, websites, or services to our growing community.</li>
+                <li>🌟 <strong>Credit for Your Work:</strong> You’ll receive full credit for your contributions, ensuring your work is recognized and celebrated.</li>
+            </ul>
+            <p>Join us to grow your portfolio, gain exposure, and collaborate with a passionate team!</p>
+        </div>
+    </section>
+
+    <!-- Hiring Process -->
+    <section class="section" id="hiring">
+        <h2>Join Our Team</h2>
+        <div class="hiring-steps">
+            <div class="step">
+                <h3>1. Submit Application</h3>
+                <p>Send your portfolio, previous projects, or work experience through our Discord server with the role title in the subject.</p>
+            </div>
+            
+            <div class="step">
+                <h3>2. Skill Test</h3>
+                <p>Complete a practical test relevant to your role:</p>
+                <ul>
+                    <li>Developers: Build a small project (72hr deadline)</li>
+                    <li>Designers: Create sample assets</li>
+                    <li>Community Managers: Conflict resolution scenario test</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h3>3. Collaboration</h3>
+                <p>If selected, we’ll collaborate with you and provide credit for your work along with promotion for your projects.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discord CTA -->
+    <div class="section">
+        <div class="discord-cta">
+            <h2>Connect With Us</h2>
+            <p>Join our growing community for updates, support, and collaboration!</p>
+            <a href="https://discord.gg/qz9DABssg9" 
+               style="display: inline-block; 
+                      background: white; 
+                      color: var(--black); 
+                      padding: 1rem 2rem; 
+                      border-radius: 50px; 
+                      text-decoration: none; 
+                      margin-top: 1rem;">
+                Join Discord Server
+            </a>
+        </div>
+    </div>
 
 </body>
 </html>
